@@ -14,9 +14,10 @@ fn watch(file: &str) -> notify::FsEventWatcher {
     // Don't join this thread
     thread::spawn(move || {
         loop {
-        match rx.recv() {
-            _ => println!("changes!")
-        }
+            match rx.recv() {
+            Ok(_) => println!("changes!"),
+            Err(o) => println!("Err {}", o )
+            }
         }
     });
 
@@ -25,7 +26,8 @@ fn watch(file: &str) -> notify::FsEventWatcher {
 
 fn main() {
     // Don't let the watcher drop
-    let _watcher = watch("./test.ares");
+    let _ = watch("./test.ares");
+
     // in my real application, this sleep-loop
     // is actually a webserver that is running
     loop {

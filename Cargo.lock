@@ -2,7 +2,7 @@
 name = "rsnotify-33"
 version = "0.1.0"
 dependencies = [
- "notify 2.3.3",
+ "notify 2.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -70,7 +70,8 @@ dependencies = [
 
 [[package]]
 name = "notify"
-version = "2.3.3"
+version = "2.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "bitflags 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "filetime 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)",
